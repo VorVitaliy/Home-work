@@ -15,48 +15,38 @@ console.log("First element 'li', children:", children);
 //3.1 Имя начинаеться на большую букву
 
 
-function firstSymbol(string) {
-    var result;
-    if (string.match(/^[A-Z]/)) {
-        result = 'Имя начинается на большую букву.';
-    } else {
-        result = 'Введите имя с большой буквы.';
-    }
-    return result;
+function checkToFirstSymbol(string) {
+
+    return (string.match(/^[A-Z]/))? 'Имя начинается на большую букву.' : 'Введите имя с большой буквы.' ;
 }
 
-console.log(firstSymbol("Petia"));
+console.log(checkToFirstSymbol("Petia"));
 
 
 //3.2 В строке есть цифры, их количесвто больше 5
 
-function num(str) {
+function CheckToNum(str) {
     var result;
     var numbers = str.match(/\d/g);
     if (numbers.length >= 5) {
-        result = 'В строке есть 5 или более цифр: ' + numbers;
+        result = 'В строке есть ' + numbers.length +  ' цифр: ' + numbers;
     } else {
         result = 'В строке меньше 5 цифр';
     }
     return result;
 }
 
-console.log(num("44лрг7s_df4"));
+console.log(CheckToNum("44лрг7hghdgf6546543s_df4"));
 
 
 // 3.3 Найдем в строке слово Vitalik если оно есть
 
-function Vit(str) {
-    var reg = /Vitalik/ig.test(str);
-    if (reg) {
-        return "Слово Vitalik есть в тексте";
+function searchName(str) {
 
-    } else {
-        return "Слова Vitalik нет в тексте";
-    }
+    return (/Vitalik/ig.test(str)) ? "Слово Vitalik есть в тексте" : "Слова Vitalik нет в тексте";
 }
 
-console.log(Vit("jfkdlsjfkdls fkjdls Vitalik fds hg"));
+console.log(searchName("jfkdlsjfkdls fkjdls Vitalik fds hg"));
 
 
 
